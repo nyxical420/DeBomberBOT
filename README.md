@@ -1,5 +1,7 @@
 # DeBomberBOT
-idk lol
+An WordBomb Bot for JKLM.
+
+Original Creator: [msesjrl/BombPartyBotJKLM](https://github.com/msesjrl/BombPartyBotJKLM)
 
 ## Features
 - Login
@@ -10,8 +12,9 @@ idk lol
 - Human Mode
   - Makes the bot types like a human.
 
-- Word Typo
+- Word Typo (from Origin, modified)
   - Makes the bot creates typo, and deletes it after.
 
-- Auto Join
-  - Lets the bot account join the game automatically (you will need to press ``INSERT`` key to start the bot.)
+- Auto Join (from Origin, modified)
+  - Lets the bot account join the game automatically
+    - Press ``INSERT`` to start the bot. I added this to avoid any mistake while the bot is in the game.
