@@ -6,7 +6,7 @@ import keyboard
 
 # Settings
 roomcode = "CODE"
-textfile = "web2.txt"
+textfile = "words.txt"
 humanmode = False
 usebonus = True
 createtypo = False
