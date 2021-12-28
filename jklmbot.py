@@ -12,7 +12,7 @@ usebonus = True # Setting this to False will lower the chance of the bot getting
 createtypo = True
 
 # User / Bot Settings
-isbotaccount = False
+isbotaccount = True
 botname = "DeBomberBOT"
 jklmSettings = "" # JSON Data Required
 
