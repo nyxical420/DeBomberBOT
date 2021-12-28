@@ -15,4 +15,4 @@ An WordBomb Bot for JKLM.
 
 - Auto Join
   - Lets the bot account join the game automatically
-    - Press ``INSERT`` to start the bot. I added this to avoid any mistake while the bot is in the game.
+    - Press ``ENTER`` to start the bot. I added this to avoid any mistake while the bot is in the game.
