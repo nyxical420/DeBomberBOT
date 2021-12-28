@@ -1,31 +1,27 @@
-from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import time
-import random
+from selenium import webdriver
 import keyboard
+import random
+import time
 
 # Settings
 roomcode = "CODE"
 textfile = "words.txt"
-humanmode = False
-usebonus = True
-createtypo = False
+humanmode = True
+usebonus = True # Setting this to False will lower the chance of the bot getting another life.
+createtypo = True
 
 # User / Bot Settings
-isbotaccount = True
+isbotaccount = False
 botname = "DeBomberBOT"
-jklmSettings = '' # JSON Data Required
-jklmUserToken = ""
+jklmSettings = "" # JSON Data Required
 
-wordlistone = open(textfile)
-stringone = wordlistone.read()
 driver = webdriver.Chrome("./chromedriver")
 
 if isbotaccount == False:
-    driver.get("https://jklm.fun") # Visit main site to change player config
+    driver.get("https://jklm.fun")
     driver.execute_script(f'auth = {jklmSettings}')
     driver.execute_script('localStorage.setItem("jklmSettings", JSON.stringify(auth))')
-    driver.execute_script(f'localStorage.setItem("jklmUserToken", "{jklmUserToken}")')
     driver.get("https://jklm.fun/" + roomcode)
 
 if isbotaccount == True: 
@@ -44,8 +40,14 @@ joindelay    = [0.07, 0.10, 0.20]
 removekey    = [0.08, 0.09, 0.10, 0.20]
 bonus        = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V"]
 typoletters  = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+wordlistone = open(textfile)
+stringone = wordlistone.read()
+
+# Bot
+print("Note: If you want to make the bot faster, try minimizing the chrome window.")
 while True:
-    if keyboard.is_pressed('insert'):
+    if keyboard.is_pressed('enter'):
         print("\n\rBot Activated!")
         while not keyboard.is_pressed('delete'):
             while True:
@@ -165,4 +167,4 @@ while True:
                 pass
     
     else:
-        print("\rWaiting for activation... [Press Insert to Activate Bot]", end="")
+        print("\rWaiting for activation... [Press Enter to Activate Bot]", end="")
