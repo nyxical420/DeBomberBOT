@@ -1,5 +1,7 @@
+# Version 1.0.2
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
+import requests
 import keyboard
 import random
 import time
@@ -7,9 +9,10 @@ import time
 # Settings
 roomcode = "CODE"
 textfile = "words.txt"
-humanmode = True
+humanmode = False
 usebonus = True # Setting this to False will lower the chance of the bot getting another life.
 createtypo = True
+genuser = True # Grabs random usernames in the DeBomberBOT repo.
 
 # User / Bot Settings
 isbotaccount = True
@@ -17,6 +20,7 @@ botname = "DeBomberBOT"
 jklmSettings = "" # JSON Data Required
 
 driver = webdriver.Chrome("./chromedriver")
+driver.set_window_size(515, 435)
 
 if isbotaccount == False:
     driver.get("https://jklm.fun")
@@ -31,7 +35,12 @@ if isbotaccount == True:
     name.click()
     name.send_keys(Keys.CONTROL, "a")
     name.send_keys(Keys.DELETE)
-    name.send_keys(botname)
+    if genuser == False:
+        name.send_keys(botname)
+    if genuser == True:
+        response = requests.get('https://raw.githubusercontent.com/xacvwe/DeBomberBOT/main/usernames.txt')
+        genname = random.choice(response.text.splitlines())
+        name.send_keys(f"{genname}")
     name.send_keys(Keys.RETURN)
 
 humanspeed   = [0.04, 0.05, 0.06, 0.07, 0.10, 0.12, 0.15, 0.20]
